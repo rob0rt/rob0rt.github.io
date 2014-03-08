@@ -126,7 +126,7 @@ h1 {
 		display: -moz-inline-box;
 		*display: inline;
 		zoom: 1;
-		width: 49%;
+		width: 100%;
 		text-align: center;
 		margin: 30px 0;
 		color: black;
@@ -138,36 +138,59 @@ h1 {
 	background: #1e1854;
 	color:#ffffff;
 	width: 60%;
-	height: 100%;
-	left: 20%;
-	top: 0%;
-	margin-top: -25px;
-	margin-left: -25px;
-	padding: 50px;
+	height: 400px;
+	left: 50%;
+	top: 50%;
+	margin-top: -200px;
+	margin-left: -30%;
+	line-height: 400px;
 }
-	#about h2 {
-		font-size: 50px;
-		margin-bottom: 20px;
-		border-bottom: 2px solid white;
+	#about img {
+		width: 400px;
+		height: 400px;
+		float: left;
+		position: relative;
 	}
 	#about p {
 		font-size: 25px;
-		line-height: 110%;
+		line-height: 40px;
 		margin-bottom: 40px;
-	}
-	#about p:last-child {
-		margin-bottom: 0px;
-	}
-	#about a {
-		color: #fff;
+		position: relative;
+		margin-left: 400px;
+		padding: 50px;
+		vertical-align: middle;
 	}
 
+/* ===== CONTACT ===== */
 #contact {
-	position: relative;
-	background: #000;
-	color:#ffffff;
-	height: auto;
-	width: 72%;
-	left: 7%;
-	padding: 50px 7%;
+	width: 400px;
+	margin-left: -200px;
+	left: 50%;
+	bottom: 50px;
 }
+	#contact > a {
+		font-size: 40px;
+		display: inline-block;
+		display: -moz-inline-box;
+		*display: inline;
+		zoom: 1;
+		width: 24%;
+		text-align: center;
+		margin: 30px 0;
+		color: black;
+		text-decoration: none;
+		padding-top: 31px;
+		padding-bottom: 31px;
+	}
+	.github {
+		background: #2ecc71;
+	}
+	.resume {
+		background: #3498db;
+	}
+	.linkedin {
+		background: #e74c3c;
+	}
+	.email {
+		background: #9b59b6;
+	}
