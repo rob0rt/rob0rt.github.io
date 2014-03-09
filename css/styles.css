@@ -63,12 +63,6 @@ div {
 	position: fixed;
 }
 
-h1 {
-    text-align: center;
-    font-size: 600%;
-	margin-bottom: 20px;
-}
-
 /*===== BANNER BARS ===== */
 #wrapper {
 	height: 100%;
@@ -137,28 +131,27 @@ h1 {
 #about {
 	background: #1e1854;
 	color:#ffffff;
-	width: 60%;
-	height: 400px;
+	width: 600px;
+	height: 200px;
 	left: 50%;
 	top: 50%;
-	margin-top: -200px;
-	margin-left: -30%;
-	line-height: 400px;
+	margin-top: -100px;
+	margin-left: -300px;
 }
 	#about img {
-		width: 400px;
-		height: 400px;
+		width: 200px;
+		height: 200px;
 		float: left;
 		position: relative;
 	}
 	#about p {
-		font-size: 25px;
-		line-height: 40px;
+		font-size: 20px;
+		line-height: 30px;
 		margin-bottom: 40px;
 		position: relative;
-		margin-left: 400px;
-		padding: 50px;
-		vertical-align: middle;
+		margin-left: 200px;
+		padding: 20px;
+		text-align: center;
 	}
 
 /* ===== CONTACT ===== */
@@ -183,14 +176,14 @@ h1 {
 		padding-bottom: 31px;
 	}
 	.github {
-		background: #2ecc71;
+		background: #446A8E;
 	}
 	.resume {
-		background: #3498db;
+		background: #EF9D2F;
 	}
 	.linkedin {
-		background: #e74c3c;
+		background: #439787;
 	}
 	.email {
-		background: #9b59b6;
+		background: #D82E2E;
 	}
