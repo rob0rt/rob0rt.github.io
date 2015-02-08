@@ -65,6 +65,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 	#info h1 {
@@ -91,14 +92,11 @@ body {
 
 /* ===== CONTACT ===== */
 #contact {
-	position: fixed;
-	width: 100%;
-	bottom: 30px;
 	text-align: center;
+	margin-top: 50px;
 }
 	#contact a {
 		font-size: 40px;
-		margin: 30px 0;
 		color: #fff;
 		text-decoration: none;
 		margin-left: 5%;
