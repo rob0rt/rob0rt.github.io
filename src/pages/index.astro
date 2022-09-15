@@ -19,69 +19,41 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
         height: 100%;
       }
 
-      main {
-        display: grid;
-        place-items: center;
-        align-content: center;
-        height: 100%;
-      }
-
       main * {
         font-family: "Raleway", sans-serif;
         color: #fff;
         font-weight: 100;
       }
 
-      .name {
-        margin-top: 20px;
-        font-size: 100px;
-        text-align: center;
-        line-height: 100px;
-      }
-
-      .subtitle {
-        margin-top: 10px;
-        font-size: 24px;
-      }
-
-      .circular {
-        width: 300px;
-        height: 300px;
-        border-radius: 150px;
-        -webkit-border-radius: 150px;
-        -moz-border-radius: 150px;
-        background: url("/silhoutte.png") no-repeat;
-        background-size: 300px 300px;
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      #links {
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-      }
-
-      #links a {
-        font-size: 25px;
-        margin-left: 10px;
-        margin-right: 10px;
+      .link {
+        @apply text-2xl underline mx-2;
       }
     </style>
   </head>
   <body>
     <Background client:only="svelte" />
-    <main>
-      <div class="circular"></div>
-      <h1 class="name">robert lynch</h1>
-      <h2 class="subtitle">senior software engineer</h2>
-      <div id="links">
-        <a href="https://github.com/rob0rt" target="_blank">github</a>
-        <a href="/resume.pdf" target="_blank">resume</a>
-        <a href="http://www.linkedin.com/in/robertmlynch/" target="_blank"
+    <main class="grid content-center place-items-center h-full">
+      <img
+        class="rounded-full"
+        src="/silhoutte.png"
+        alt="silhoutte"
+        width="300"
+        height="300"
+      />
+      <h1 class="text-8xl text-center mt-4">robert lynch</h1>
+      <h2 class="text-2xl mt-2">senior software engineer</h2>
+      <div class="mt-4 flex justify-center">
+        <a href="https://github.com/rob0rt" target="_blank" class="link"
+          >github</a
+        >
+        <a href="/resume.pdf" target="_blank" class="link">resume</a>
+        <a
+          href="http://www.linkedin.com/in/robertmlynch/"
+          target="_blank"
+          class="link"
           >linkedin
         </a>
-        <a href="/blog">blog</a>
+        <a href="/blog" class="link">blog</a>
       </div>
     </main>
   </body>
