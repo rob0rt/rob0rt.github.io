@@ -39,11 +39,11 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
             posts.map((post) => (
               <li class="flex my-10">
                 <time
-                  datetime={post.frontmatter.date}
+                  datetime={post.frontmatter.pubDate}
                   class="w-40 flex flex-col items-center justify-center text-zinc-700"
                 >
                   <span class="text-4xl">
-                    {new Date(post.frontmatter.date).toLocaleDateString(
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
                       "en-us",
                       {
                         month: "short",
@@ -52,7 +52,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
                     )}
                   </span>
                   <span>
-                    {new Date(post.frontmatter.date).toLocaleDateString(
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
                       "en-us",
                       {
                         year: "numeric",

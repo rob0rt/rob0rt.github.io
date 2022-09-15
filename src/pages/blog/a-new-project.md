@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "A New Project"
 description: "A transcription of my thoughts and rants"
-date: "Sep 15 2022"
+pubDate: "Sep 15 2022"
 ---
 
 Over my professional career, I've written my fair number of documents and posts

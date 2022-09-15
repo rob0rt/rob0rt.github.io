@@ -5,13 +5,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 export interface Props {
   content: {
     title: string;
-    date: string;
+    pubDate: string;
     updatedDate?: string;
   };
 }
 
 const {
-  content: { title, date },
+  content: { title, pubDate },
 } = Astro.props;
 ---
 
@@ -49,7 +49,7 @@ const {
           <h1 class="mb-0">{title}</h1>
           <p class="mt-0 text-slate-500">
             Originally published on {
-              new Date(date).toLocaleDateString("en-us", {
+              new Date(pubDate).toLocaleDateString("en-us", {
                 month: "short",
                 day: "numeric",
                 year: "numeric",
