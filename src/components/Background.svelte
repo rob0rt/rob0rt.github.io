@@ -33,9 +33,7 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
@@ -46,9 +44,7 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH}
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
@@ -61,9 +57,7 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH}
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
@@ -74,12 +68,8 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
@@ -91,9 +81,7 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
         `}
@@ -104,12 +92,8 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
@@ -121,12 +105,8 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
@@ -136,12 +116,8 @@
       <path
         d={`
           M ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
-          L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${
-          y * BLOCK_WIDTH + BLOCK_WIDTH / 2
-        }
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
+          L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
