@@ -1,7 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-// import "../styles/global.css";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
@@ -15,29 +14,11 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <!-- <style>
-      ul {
-        list-style-type: none;
-        padding: unset;
-      }
-      ul li {
-        display: flex;
-      }
-      ul li time {
-        flex: 0 0 130px;
-        font-style: italic;
-        color: #888;
-      }
-      ul li a:visited {
-        color: #8e32dc;
-      }
-    </style> -->
   </head>
   <body>
-    <!-- <Header /> -->
     <main class="flex">
       <aside
-        class="bg-[url('/bg.png')] w-96 h-screen flex flex-col justify-center items-center"
+        class="bg-[url('/bg.png')] min-w-[375px] h-screen flex flex-col justify-center items-center"
       >
         <a href="/">
           <img
@@ -56,13 +37,13 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
         <ul>
           {
             posts.map((post) => (
-              <li class="flex  my-2">
+              <li class="flex my-10">
                 <time
-                  datetime={post.frontmatter.pubDate}
+                  datetime={post.frontmatter.date}
                   class="w-40 flex flex-col items-center justify-center text-zinc-700"
                 >
                   <span class="text-4xl">
-                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                    {new Date(post.frontmatter.date).toLocaleDateString(
                       "en-us",
                       {
                         month: "short",
@@ -71,7 +52,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
                     )}
                   </span>
                   <span>
-                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                    {new Date(post.frontmatter.date).toLocaleDateString(
                       "en-us",
                       {
                         year: "numeric",
@@ -80,13 +61,12 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
                   </span>
                 </time>
                 <div class="flex flex-col">
-                  <h2 class="text-5xl">
+                  <h2 class="text-5xl font-extrabold">
                     <a href={post.url}>{post.frontmatter.title}</a>
                   </h2>
                   <p>{post.frontmatter.description}</p>
                 </div>
               </li>
-              <hr />
             ))
           }
         </ul>

@@ -1,57 +1,64 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-// import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 export interface Props {
   content: {
     title: string;
-    description: string;
-    pubDate?: string;
+    date: string;
     updatedDate?: string;
-    heroImage?: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, date },
 } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
-    <style>
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
-      }
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 1rem 0;
-      }
-    </style>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-
   <body>
-    <Header />
-    <main>
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
-        <hr />
-        <slot />
-      </article>
+    <main class="flex h-screen">
+      <aside
+        class="bg-[url('/bg.png')] min-w-[375px] h-screen flex flex-col justify-center items-center"
+      >
+        <a href="/">
+          <img
+            class="rounded-full"
+            src="/silhoutte.png"
+            alt="silhoutte"
+            width="200"
+            height="200"
+          />
+        </a>
+        <h1 class="font-title font-thin text-white text-5xl mt-4">
+          robert lynch
+        </h1>
+        <a
+          class="h-10 px-6 mt-4 font-semibold rounded-md border border-white text-white font-title inline-flex items-center"
+          href="/blog"
+        >
+          back
+        </a>
+      </aside>
+      <section class="w-full overflow-y-scroll my-4 flex justify-center">
+        <article class="prose min-w-[65ch]">
+          <h1 class="mb-0">{title}</h1>
+          <p class="mt-0 text-slate-500">
+            Originally published on {
+              new Date(date).toLocaleDateString("en-us", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })
+            }
+          </p>
+          <slot />
+        </article>
+      </section>
     </main>
-    <Footer />
   </body>
 </html>
