@@ -18,6 +18,35 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
         @apply text-2xl underline mx-2;
       }
     </style>
+    <style is:global>
+      .background {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -100;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          stroke-opacity: 0;
+        }
+        to {
+          opacity: 1;
+          stroke-opacity: 1;
+        }
+      }
+
+      .tile {
+        stroke: currentColor;
+        stroke-width: 1;
+        fill: currentColor;
+        animation: 0.5s ease-out 10s 1 fade;
+        animation-fill-mode: backwards;
+      }
+    </style>
   </head>
   <body>
     <Background client:only="svelte" />

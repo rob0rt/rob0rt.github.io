@@ -26,7 +26,7 @@
   }
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" class="background">
   {#each Array.from({ length: horizonalCount }, (_, i) => i) as x}
     {#each Array.from({ length: verticalCount }, (_, i) => i) as y}
       <!-- top left -->
@@ -38,6 +38,7 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -48,6 +49,7 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
 
@@ -60,6 +62,7 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -70,6 +73,7 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
 
@@ -82,6 +86,7 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -92,6 +97,7 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
 
@@ -104,6 +110,7 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -114,38 +121,9 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
+        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
     {/each}
   {/each}
 </svg>
-
-<style>
-  svg {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -100;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0;
-      stroke-opacity: 0;
-    }
-    to {
-      opacity: 1;
-      stroke-opacity: 1;
-    }
-  }
-
-  path {
-    stroke: currentColor;
-    stroke-width: 1;
-    fill: currentColor;
-    animation: 0.5s ease-out 10s 1 fade;
-    animation-fill-mode: backwards;
-  }
-</style>
