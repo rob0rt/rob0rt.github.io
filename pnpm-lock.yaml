@@ -7,7 +7,7 @@ specifiers:
   '@astrojs/svelte': ^1.0.0
   '@astrojs/tailwind': ^2.0.0
   '@tailwindcss/typography': ^0.5.7
-  astro: ^1.2.4
+  astro: ^1.2.5
   svelte: ^3.46.4
   tailwindcss: ^3.0.24
 
@@ -18,7 +18,7 @@ dependencies:
   '@astrojs/svelte': 1.0.0_svelte@3.50.1
   '@astrojs/tailwind': 2.0.0_tailwindcss@3.1.8
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
-  astro: 1.2.4
+  astro: 1.2.5
   svelte: 3.50.1
   tailwindcss: 3.1.8
 
@@ -888,8 +888,8 @@ packages:
     hasBin: true
     dev: false
 
-  /astro/1.2.4:
-    resolution: {integrity: sha512-RJAdTDb4mECyAzNjl4RFzEHueHpGqvxPMQAYYd59nK7tCqBYzAde1mThzuEtQglSdGnIP3DXia2XtPzoo9mniQ==}
+  /astro/1.2.5:
+    resolution: {integrity: sha512-kyP4HVQt9h+O8C+djY4q4VsBsT2Vgt4AjNDZQZQr8sdN+GdDQISAxZMCpUp99w9PndpAPGxvVEJMQD3MG+dyjQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:

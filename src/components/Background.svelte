@@ -26,7 +26,7 @@
   }
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" class="background">
+<svg xmlns="http://www.w3.org/2000/svg">
   {#each Array.from({ length: horizonalCount }, (_, i) => i) as x}
     {#each Array.from({ length: verticalCount }, (_, i) => i) as y}
       <!-- top left -->
@@ -38,7 +38,6 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -49,7 +48,6 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
 
@@ -62,7 +60,6 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -73,7 +70,6 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
 
@@ -86,7 +82,6 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -97,7 +92,6 @@
           L ${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
 
@@ -110,7 +104,6 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
       <path
@@ -121,7 +114,6 @@
           L ${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}
         `}
         color={getColor()}
-        class="tile"
         style={`animation-delay: ${getDelay(x, y)}s;`}
       />
     {/each}
@@ -129,7 +121,7 @@
 </svg>
 
 <style>
-  .background {
+  svg {
     position: fixed;
     left: 0;
     top: 0;
@@ -149,7 +141,7 @@
     }
   }
 
-  .tile {
+  path {
     stroke: currentColor;
     stroke-width: 1;
     fill: currentColor;
