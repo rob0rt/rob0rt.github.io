@@ -1,0 +1,88 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Background from "../components/Background.svelte";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      main {
+        display: grid;
+        place-items: center;
+        align-content: center;
+        height: 100%;
+      }
+
+      main * {
+        font-family: "Raleway", sans-serif;
+        color: #fff;
+        font-weight: 100;
+      }
+
+      .name {
+        margin-top: 20px;
+        font-size: 100px;
+        text-align: center;
+        line-height: 100px;
+      }
+
+      .subtitle {
+        margin-top: 10px;
+        font-size: 24px;
+      }
+
+      .circular {
+        width: 300px;
+        height: 300px;
+        border-radius: 150px;
+        -webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        background: url("/silhoutte.png") no-repeat;
+        background-size: 300px 300px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      #links {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+      }
+
+      #links a {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <Background client:only="svelte" />
+    <main>
+      <div class="circular"></div>
+      <h1 class="name">robert lynch</h1>
+      <h2 class="subtitle">senior software engineer</h2>
+      <div id="links">
+        <a href="https://github.com/rob0rt" target="_blank">github</a>
+        <a href="files/resume.pdf" target="_blank">resume</a>
+        <a href="http://www.linkedin.com/in/robertmlynch/" target="blank"
+          >linkedin
+        </a>
+        <a href="/blog">blog</a>
+      </div>
+    </main>
+  </body>
+</html>
