@@ -180,10 +180,4 @@
     animation: 0.5s ease-out 10s 1 fade;
     animation-fill-mode: backwards;
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tile {
-      animation: none;
-    }
-  }
 </style>
