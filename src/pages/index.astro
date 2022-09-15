@@ -8,21 +8,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300"
-      rel="stylesheet"
-      type="text/css"
-    />
     <style>
       html,
       body {
         height: 100%;
-      }
-
-      main * {
-        font-family: "Raleway", sans-serif;
-        color: #fff;
-        font-weight: 100;
       }
 
       .link {
@@ -32,7 +21,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
   </head>
   <body>
     <Background client:only="svelte" />
-    <main class="grid content-center place-items-center h-full">
+    <main
+      class="grid content-center place-items-center h-full font-title font-thin text-white"
+    >
       <img
         class="rounded-full"
         src="/silhoutte.png"

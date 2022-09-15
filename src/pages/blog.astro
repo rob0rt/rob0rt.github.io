@@ -1,9 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import "../styles/global.css";
+// import "../styles/global.css";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
@@ -17,7 +15,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
+    <!-- <style>
       ul {
         list-style-type: none;
         padding: unset;
@@ -33,11 +31,27 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       ul li a:visited {
         color: #8e32dc;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <Header />
-    <main>
+    <!-- <Header /> -->
+    <main class="flex">
+      <aside
+        class="bg-[url('/bg.png')] w-96 h-screen flex flex-col justify-center items-center"
+      >
+        <a href="/">
+          <img
+            class="rounded-full"
+            src="/silhoutte.png"
+            alt="silhoutte"
+            width="200"
+            height="200"
+          />
+        </a>
+        <h1 class="font-title font-thin text-white text-5xl mt-4">
+          robert lynch
+        </h1>
+      </aside>
       <section>
         <ul>
           {
@@ -60,6 +74,5 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
         </ul>
       </section>
     </main>
-    <Footer />
   </body>
 </html>
