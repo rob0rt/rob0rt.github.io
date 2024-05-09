@@ -1,10 +1,10 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Background from "../components/Background.svelte";
+import Background from "../components/Background.html";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -18,56 +18,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
         @apply text-2xl underline mx-2;
       }
     </style>
-    <style is:global>
-      .background {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -100;
-      }
-
-      @keyframes fade {
-        from {
-          opacity: 0;
-          stroke-opacity: 0;
-        }
-        to {
-          opacity: 1;
-          stroke-opacity: 1;
-        }
-      }
-
-      .tile {
-        stroke: currentColor;
-        stroke-width: 1;
-        fill: currentColor;
-        animation: 0.5s ease-out 10s 1 fade;
-        animation-fill-mode: backwards;
-      }
-    </style>
   </head>
   <body>
-    <Background client:only="svelte" />
-    <main
-      class="grid content-center place-items-center h-full font-title font-thin text-white"
-    >
-      <img
-        class="rounded-full"
-        src="/silhoutte.png"
-        alt="silhoutte"
-        width="300"
-        height="300"
-      />
-      <h1 class="text-8xl text-center mt-4">robert lynch</h1>
-      <h2 class="text-2xl mt-2">senior software engineer</h2>
-      <div class="mt-4 flex justify-center">
-        <a href="https://github.com/rob0rt" target="_blank" class="link"
-          >github</a
-        >
-        <a href="/resume.pdf" target="_blank" class="link">resume</a>
-        <a href="/blog" class="link">blog</a>
+    <Background />
+    <main class="grid place-items-center h-full">
+      <div class="flex flex-col items-center font-title font-thin text-white">
+        <img
+          class="rounded-full"
+          src="/silhoutte.png"
+          alt="silhoutte"
+          width="300"
+          height="300"
+        />
+        <h1 class="text-8xl text-center mt-4">robert lynch</h1>
+        <h2 class="text-2xl mt-2">senior software engineer</h2>
+        <div class="mt-4 flex justify-center">
+          <a href="https://github.com/rob0rt" target="_blank" class="link"
+            >github</a
+          >
+          <a href="/resume.pdf" target="_blank" class="link">resume</a>
+          <a href="/blog" class="link">blog</a>
+        </div>
       </div>
     </main>
   </body>

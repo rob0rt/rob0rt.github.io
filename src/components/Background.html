@@ -1,0 +1,131 @@
+<style>
+  #background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      stroke-opacity: 0;
+    }
+    to {
+      opacity: 1;
+      stroke-opacity: 1;
+    }
+  }
+
+  .tile {
+    stroke: currentColor;
+    stroke-width: 1;
+    fill: currentColor;
+    animation: 0.5s ease-out 10s 1 fade;
+    animation-fill-mode: backwards;
+  }
+</style>
+
+<script>
+  const BLOCK_WIDTH = 150;
+
+  let horizonalCount = 0;
+  let verticalCount = 0;
+
+  /**
+   * The screen is divided into blocks of BLOCK_WIDTH x BLOCK_WIDTH.
+   * 
+   * Each block is divided into 8 triangles, like so:
+   *       1 ----- 2 ----- 3
+   *       |  .    |    .  |
+   *       |     . | .     |
+   *       4 ----- 5 ----- 6
+   *       |     . | .     |
+   *       |  .    |    .  |
+   *       7 ----- 8 ----- 9
+   * 
+   * For each block, we will calculate each of the 9 points and then draw the 8 
+   * triangles using paths between those points.
+   * 
+   * Each triangle will have a random color and a random delay, to give the
+   * appearance of them "falling" into place
+   */
+  function redraw() {
+    let w = Math.ceil(window.innerWidth / BLOCK_WIDTH);
+    let h = Math.ceil(window.innerHeight / BLOCK_WIDTH);
+
+    if (horizonalCount === w && verticalCount === h) {
+      return;
+    }
+    horizonalCount = w;
+    verticalCount = h;
+
+    // Create a group element to hold all the paths so we can replace them all at once
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+
+    for (let x = 0; x < horizonalCount; x++) {
+      for (let y = 0; y < verticalCount; y++) {
+        const p1 = `${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH}`;
+        const p2 = `${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH}`;
+        const p3 = `${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH}`;
+        const p4 = `${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}`;
+        const p5 = `${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}`;
+        const p6 = `${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH / 2}`;
+        const p7 = `${x * BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}`;
+        const p8 = `${x * BLOCK_WIDTH + BLOCK_WIDTH / 2} ${y * BLOCK_WIDTH + BLOCK_WIDTH}`;
+        const p9 = `${x * BLOCK_WIDTH + BLOCK_WIDTH} ${y * BLOCK_WIDTH + BLOCK_WIDTH}`;
+
+        function path(p1, p2, p3) {
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute("d", `M ${p1} L ${p2} L ${p3} L ${p1}`);
+          path.setAttribute("class", "tile");
+          path.setAttribute("color", getColor());
+          path.setAttribute("style", `animation-delay: ${getDelay(x, y)}s;`);
+          g.append(path);
+        }
+
+        path(p1, p2, p5);
+        path(p1, p4, p5);
+        path(p3, p2, p5);
+        path(p3, p6, p5);
+        path(p7, p4, p5);
+        path(p7, p8, p5);
+        path(p9, p6, p5);
+        path(p9, p8, p5);
+      }
+    }
+
+    // Replace the old group with the new one
+    const bg = document.getElementById("background");
+    if (bg.firstChild) {
+      bg.replaceChild(g, bg.firstChild);
+    } else {
+      bg.append(g);
+    }
+  }
+
+  const MAX_COLOR = 56;
+  const MIN_COLOR = 48;
+  /**
+   * Returns a random (grey) color
+   */
+  function getColor() {
+    const n = Math.round(Math.random() * (MAX_COLOR - MIN_COLOR) + MIN_COLOR);
+    return `rgb(${n}, ${n}, ${n})`;
+  }
+
+  /**
+   * Returns a random delay for the animation with some bias towards the top left
+   */
+  function getDelay(x, y) {
+    return (Math.random() + (x / horizonalCount + y / verticalCount) * 5) / 2;
+  }
+
+  addEventListener("load", redraw);
+  addEventListener("resize", redraw);
+</script>
+
+<svg xmlns="http://www.w3.org/2000/svg" id="background">
+</svg>
